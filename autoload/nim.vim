@@ -60,14 +60,6 @@ augroup NimVim
   endif
 augroup END
 
-command! NimLog :e log://nim
-
-command! NimTerminateService
-  \ :exe printf("py nimTerminateService('%s')", b:nim_project_root)
-
-command! NimRestartService
-  \ :exe printf("py nimRestartService('%s')", b:nim_project_root)
-
 fun! s:CurrentNimFile()
   let save_cur = getpos('.')
   call cursor(0, 0, 0)
